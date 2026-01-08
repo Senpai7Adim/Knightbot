@@ -5,6 +5,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const isOwnerOrSudo = require('../lib/isOwner');
 
 // Path to store the configuration
 const configPath = path.join(__dirname, '..', 'data', 'autotyping.json');
@@ -20,13 +21,10 @@ function initConfig() {
 // Toggle autotyping feature
 async function autotypingCommand(sock, chatId, message) {
     try {
-        // Check if sender is the owner or sudo
-        const { isSudo } = require('../lib/index');
         const senderId = message.key.participant || message.key.remoteJid;
-        const senderIsSudo = await isSudo(senderId);
-        const isOwner = message.key.fromMe || senderIsSudo;
+        const isOwner = await isOwnerOrSudo(senderId, sock, chatId);
         
-        if (!isOwner) {
+        if (!message.key.fromMe && !isOwner) {
             await sock.sendMessage(chatId, {
                 text: '❌ This command is only available for the owner!',
                 contextInfo: {

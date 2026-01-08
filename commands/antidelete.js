@@ -72,13 +72,14 @@ function saveAntideleteConfig(config) {
     }
 }
 
+const isOwnerOrSudo = require('../lib/isOwner');
+
 // Command Handler
 async function handleAntideleteCommand(sock, chatId, message, match) {
-    const { isSudo } = require('../lib/index');
     const senderId = message.key.participant || message.key.remoteJid;
-    const senderIsSudo = await isSudo(senderId);
+    const isOwner = await isOwnerOrSudo(senderId, sock, chatId);
     
-    if (!message.key.fromMe && !senderIsSudo) {
+    if (!message.key.fromMe && !isOwner) {
         return sock.sendMessage(chatId, { text: '*Only the bot owner can use this command.*' }, { quoted: message });
     }
 

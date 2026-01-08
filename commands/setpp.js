@@ -1,16 +1,14 @@
 const fs = require('fs');
 const path = require('path');
 const { downloadContentFromMessage } = require('@whiskeysockets/baileys');
+const isOwnerOrSudo = require('../lib/isOwner');
 
 async function setProfilePicture(sock, chatId, msg) {
     try {
-        // Check if user is owner or sudo
-        const { isSudo } = require('../lib/index');
         const senderId = msg.key.participant || msg.key.remoteJid;
-        const senderIsSudo = await isSudo(senderId);
-        const isOwner = msg.key.fromMe || senderIsSudo;
+        const isOwner = await isOwnerOrSudo(senderId, sock, chatId);
         
-        if (!isOwner) {
+        if (!msg.key.fromMe && !isOwner) {
             await sock.sendMessage(chatId, { 
                 text: '❌ This command is only available for the owner!' 
             });
