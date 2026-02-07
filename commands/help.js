@@ -234,8 +234,8 @@ Join our channel for updates:`;
                 image: imageBuffer,
                 caption: helpMessage,
                 contextInfo: {
-                    forwardingScore: 1,
-                    isForwarded: true,
+                    forwardingScore: 0,
+                    isForwarded: false,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363161513685998@newsletter',
                         newsletterName: 'KnightBot MD',
@@ -248,8 +248,8 @@ Join our channel for updates:`;
             await sock.sendMessage(chatId, { 
                 text: helpMessage,
                 contextInfo: {
-                    forwardingScore: 1,
-                    isForwarded: true,
+                    forwardingScore: 0,
+                    isForwarded: false,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363161513685998@newsletter',
                         newsletterName: 'KnightBot MD by Mr Unique Hacker',
