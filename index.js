@@ -157,8 +157,8 @@ async function startXeonBotInc() {
                     await XeonBotInc.sendMessage(mek.key.remoteJid, {
                         text: '❌ An error occurred while processing your message.',
                         contextInfo: {
-                            forwardingScore: 1,
-                            isForwarded: true,
+                            forwardingScore: 0,
+                            isForwarded: false,
                             forwardedNewsletterMessageInfo: {
                                 newsletterJid: '120363161513685998@newsletter',
                                 newsletterName: 'KnightBot MD',
@@ -266,8 +266,8 @@ async function startXeonBotInc() {
                 await XeonBotInc.sendMessage(botNumber, {
                     text: `🤖 Bot Connected Successfully!\n\n⏰ Time: ${new Date().toLocaleString()}\n✅ Status: Online and Ready!\n\n✅Make sure to join below channel`,
                     contextInfo: {
-                        forwardingScore: 1,
-                        isForwarded: true,
+                        forwardingScore: 0,
+                        isForwarded: false,
                         forwardedNewsletterMessageInfo: {
                             newsletterJid: '120363161513685998@newsletter',
                             newsletterName: 'KnightBot MD',
@@ -282,10 +282,10 @@ async function startXeonBotInc() {
             await delay(1999)
             console.log(chalk.yellow(`\n\n                  ${chalk.bold.blue(`[ ${global.botname || 'KNIGHT BOT'} ]`)}\n\n`))
             console.log(chalk.cyan(`< ================================================== >`))
-            console.log(chalk.magenta(`\n${global.themeemoji || '•'} YT CHANNEL: MR UNIQUE HACKER`))
-            console.log(chalk.magenta(`${global.themeemoji || '•'} GITHUB: mrunqiuehacker`))
+            console.log(chalk.magenta(`\n${global.themeemoji || '•'} YT CHANNEL: MC SENPAI`))
+            console.log(chalk.magenta(`${global.themeemoji || '•'} GITHUB: senpai7Adim`))
             console.log(chalk.magenta(`${global.themeemoji || '•'} WA NUMBER: ${owner}`))
-            console.log(chalk.magenta(`${global.themeemoji || '•'} CREDIT: MR UNIQUE HACKER`))
+            console.log(chalk.magenta(`${global.themeemoji || '•'} CREDIT: MC SENPAI`))
             console.log(chalk.green(`${global.themeemoji || '•'} 🤖 Bot Connected Successfully! ✅`))
             console.log(chalk.blue(`Bot Version: ${settings.version}`))
         }
