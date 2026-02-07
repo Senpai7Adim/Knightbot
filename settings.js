@@ -1,9 +1,9 @@
 const settings = {
-  packname: 'Knight Bot',
+  packname: 'Senpai Bot',
   author: '‎',
   botName: "Senp@! Bot",
   botOwner: 'SENPAI', // Your name
-  ownerNumber: '237675183007', //Set your number here without + symbol, just add country code & number without any space
+  ownerNumber: '237655141724', //Set your number here without + symbol, just add country code & number without any space
   giphyApiKey: 'qnl7ssQChTdPjsKta2Ax2LMaGXz303tq',
   commandMode: "public",
   maxStoreMessages: 20, 
